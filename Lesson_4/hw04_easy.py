@@ -6,13 +6,26 @@
 # квадратами элементов исходного списка
 # [0, 1, 2, 3] --> [0, 1, 4, 9]
 
+import random
 
+list = [random.randint(-10,10) for _ in range(10)]
+list_sqr = [i**2 for i in list ]
+print('Исходный список - {} \nСписок с квадратами элементов - {}'
+.format(list, list_sqr))
+
+print('====================================')
 
 # Задание-2:
 # Даны два списка фруктов.
 # Получить список фруктов, присутствующих в обоих исходных списках.
 
+fruits1 = ['apple', 'banana', 'kiwi', 'watermelon', 'orange', 'pear', 'figs']
+fruits2 = ['kiwi', 'figs', 'coconut', 'lemon', 'pear', 'peach', 'apple']
+repeat_fruits = [i for i in fruits1 if i in fruits2]
+print('Первый список - {} \nВторой список - {} \nЗначения, присутсвующие в обоих списках - {}'
+.format(fruits1, fruits2, repeat_fruits))
 
+print('====================================')
 
 # Задание-3:
 # Дан список, заполненный произвольными числами.
@@ -21,7 +34,11 @@
 # + Элемент неотрицательный
 # + Элемент не кратен 3
 
+list = [random.randint(-10,10) for _ in range(20)]
+new_list = [i for i in list if i % 2 == 0 and i > 0 and i % 3 != 0]
+print('Исходный список - {} \nНовый список - {}'.format(list,new_list))
 
+print('====================================')
 
 
 
