@@ -35,7 +35,7 @@ print('====================================')
 # + Элемент не кратен 3
 
 list = [random.randint(-10,10) for _ in range(20)]
-new_list = [i for i in list if i % 2 == 0 and i > 0 and i % 3 != 0]
+new_list = [i for i in list if i % 2 == 0 and i >= 0 and i % 3 != 0]
 print('Исходный список - {} \nНовый список - {}'.format(list,new_list))
 
 print('====================================')
