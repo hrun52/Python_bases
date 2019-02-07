@@ -15,6 +15,8 @@ pattern2 = r'([a-z]+)[A-Z]+'
 found = list(set(re.findall(pattern1, s) + re.findall(pattern2, s)))
 print(found)
 
+print(re.findall('[a-z]+', s))
+
 '''
 Второй способ
 '''
@@ -71,6 +73,9 @@ while i < len(f):
         i += 1
 
 print(max_len, max_seq)
+
+print(max(re.findall(r'0+|1+|2+|3+|4+|5+|6+|7+|8+|9+', f), key = len)) #посмотрела в видеоуроке, что можно было в тыщу раз проще сделать
+
 print('====================================')
 
 
