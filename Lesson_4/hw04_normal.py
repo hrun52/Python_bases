@@ -16,9 +16,23 @@ found = list(set(re.findall(pattern1, s) + re.findall(pattern2, s)))
 print(found)
 
 '''
-Второй способ //надо доделать
+Второй способ
 '''
 s = 'mtMmEZUOmcqGKGBJMjhjhkHjnHkjhKJhKJFFHGF'
+board1 = 0
+board2 = 0
+i = 0
+result = []
+while i < len(s):
+    if s[i].isupper():
+        board1 = board2
+        board2 = i
+        result.append(s[board1:board2])
+        while i < len(s) and s[i].isupper():
+            i += 1
+            board2 = i
+    i += 1
+print(result)
 
 print('====================================')
 
@@ -36,15 +50,27 @@ def fill_fail(fail_name):
     Заполнение файла цифрами
     '''
     f = open(fail_name, 'w')
-    for i in range(2500):
+    for i in range(25000):
         f.write(str(random.randint(0,9)))
     f.close()
 
 fill_fail('1.txt')
 f = str(open('1.txt').readlines())
-'''
-потом доделаю
-'''
+max_len = 1
+max_seq = []
+i = 0
+while i < len(f):
+    temp_max_len = 1
+    while i + 1 < len(f) and f[i + 1] == f[i]:
+        temp_max_len += 1
+        i += 1
+        if max_len < temp_max_len:
+            max_len = temp_max_len
+            max_seq = f[i - max_len + 1 : i + 1]
+    if temp_max_len == 1:
+        i += 1
+
+print(max_len, max_seq)
 print('====================================')
 
 
