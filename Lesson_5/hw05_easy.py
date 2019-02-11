@@ -37,6 +37,15 @@ list = [print(i) for i in os.listdir(os.getcwd()) if os.path.isdir(os.path.join(
 # Задача-3:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
 # ИСПОЛЬЗОВАТЬ ТОЛЬКО МОДУЛЬ OS
-'''
-os.link(тут путь до текущего файла, os.getcwd()))
-'''
+
+current_fail_path = os.path.join(os.getcwd(), os.path.basename(__file__))
+#s.link('C:\\Users\\В.А.Поплавская\\Desktop\\1.txt', 'C:\\test\\1.txt')
+#f = os.open(current_fail_path, os.O_RDWR|os.O_CREAT)
+#os.close(f)
+#dst = 'E:\\hw05_easy.py'
+#os.link(current_fail_path, dst)
+#os.link(current_fail_path, os.path.join(current_fail_path, ' - copy'))
+print(os.path.join(os.getcwd(), os.path.basename(__file__)))
+
+os.link(os.path.join(os.getcwd(), os.path.basename(__file__)), os.path.join(os.getcwd(), str('copy_' + os.path.basename(__file__))))
+
